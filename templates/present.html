@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cogmento CRM</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body> 
+    <div class="h-screen flex items-center justify-center">
+        
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img src="https://api.cogmento.com/static/images/cogmento-logo.png"/>
+            <img class="w-full" src="{{qrdata}}" alt="Scan with MS Authenticator">
+            <div class="px-6 py-4">
+               
+              <p class="text-gray-700 text-base">
+                Scan with MS Authenticator to request presentation of this Credential type<br/>
+                Expires at {{expires_at}}
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#verified credentials</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#cogmento</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#SSI</span>
+            </div>
+          </div>
+        <!-- <div class="w-full max-w-xs"> 
+            <img src="https://api.cogmento.com/static/images/cogmento-logo.png"/>
+            <h1>Collect</h1>
+            <img src="{{qrdata}}"/>
+            <br/>
+            <span class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900">
+                Pin Code: {{pincode}}
+            </span>
+        </div>  -->
+    </div> 
+
+   
+</body>
+</html>

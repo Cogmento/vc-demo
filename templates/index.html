@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cogmento CRM - Verified Credentails Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% if recaptcha_key %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {% endif %}
+</head>
+
+<body>
+    <div class="h-screen flex items-center justify-center">
+        <div class="w-full max-w-sm">
+            <img src="https://api.cogmento.com/static/images/cogmento-logo.png" />
+            {% if error %}
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Missed something...</strong>
+                <span class="block sm:inline">{{error}}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                </span>
+            </div>
+            {% endif %}
+            <form action="" id="frm" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+                <input type="text" placeholder="Required" name="first_name"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <br />
+                <label class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+                <input type="text" placeholder="Required" name="last_name"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <br />
+                <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <input type="text" placeholder="Required" name="email"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <br />
+                <label class="block text-gray-700 text-sm font-bold mb-2">Phone</label>
+                <input type="text" placeholder="" name="phone"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <br /><br />
+                {% if recaptcha_key %}
+                <div class="g-recaptcha" data-sitekey="{{recaptcha_key}}"></div>
+                <br />
+                {% endif %}
+                <button type="submit" id="btn"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Collect your Credential
+                </button>
+            </form>
+
+            <hr />
+
+            <div class="pt-10 px-20 mx-auto">
+                <a href="/present">
+                    <button type="submit" id="btn"
+                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Request Presentation
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
