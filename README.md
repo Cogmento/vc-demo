@@ -1,22 +1,22 @@
 # Cogmento CRM - Verified Credentials Demo 
 
 
-Cogmento CRM, other than being a very powerful and hyper-configurable CRM platform, is also a VCM. 
-A VCM allows you to manage the issuance and verification of verified credentials at scale.  The marriage of CRM and VCM is perfect, as you already hold the subject data and can use it to create elaborate schemas that represent your data and processes and encapsualte them in a credentials. 
+Cogmento CRM is a VCM, a verifiable credential management system, and a compelling and hyper-configurable CRM platform. 
+A VCM allows you to manage the issuance and verification of verified credentials at scale. The marriage of CRM and VCM is perfect, as you already hold the subject data and can use it to create elaborate schemas that represent your data and processes and encapsulate them in credentials. 
 
-Curently Cogmento CRM implements verified credentials on top of Microsoft's platform which means the credentials can be held and presented using the MS Authenticator application. 
+Currently, Cogmento CRM implements verified credentials on top of Microsoft's platform, which means the credentials can be held and presented using the MS Authenticator application and Microsoft Entra Verified ID, which enables Zero Trust security. 
 
 
 ## This demo
 
-This small web application is a demonstration of how a simple integration with Cogmento can lead to both the collection of contact information while issuing the person a verified credntial which they can later present for verification. 
+This small web application demonstrates how a simple integration with Cogmento can lead to the collection of contact information while issuing the person a verified credential, which they can later present for verification.  
 
 
 
 ## Before running the demo 
 
-First, you will need to create an account on Cogmento CRM and collect your API token associated with a user. 
-You can find your API token in the User Manager section which is  under Settings:
+First, you must create an account on Cogmento CRM and collect the API token associated with a user. 
+You can find your API token in the User Manager section, which is  under Settings:
 
 ![screenshot](./templates/api-token.png)
 
@@ -31,13 +31,13 @@ You will require the schema id, which is available to the right after the schema
 
 ![screenshot](./templates/schema-id.png)
 
-Optionally, if you'd like to use reCaptcha for the public submission form, collect your reCaptcha account's key and secret as well. 
+Optionally, if you'd like to use reCaptcha for the public submission form, collect your reCaptcha account's key and secret. 
 
-Copy the file `.env.sample` from the root of this directory to a new file named `.env` and set the values within to those collected, i.e., the API token, Schema id and optionally reCaptcha key and secret. 
+Copy the file `.env.sample` from the root of this directory to a new file named `.env` and set the values within to those collected, i.e., the API token, Schema id and optionally reCaptcha key, and secret. 
 
 ## Running the demo 
 
-To run the web app demo you can either use the `run.sh` shell script, or utilise the Docker container setup.
+To run the web app demo, you can use the `run.sh` shell script or the Docker container setup.
 
 That is, either: 
 
@@ -50,4 +50,4 @@ or
 
 ## Using the app
 
-The app will generate the contact and deal records for whomever fills in the form presented at `http://localhost:8000` (which of course in a real deployment you'll present under https and a valid domain). As a response the person will be presented with a credential they can scan into MS Authenticator's Identity wallet. 
+The app will generate the contact and deal records for whoever fills in the form presented at `http://localhost:8000` (which, of course, in a real deployment, you'll present under https and a valid domain). As a response, the person will be presented with a credential they can scan into MS Authenticator's Identity wallet. 
